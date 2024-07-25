@@ -1,4 +1,4 @@
-package com.jobkorea.app.util
+package com.jobkorea.app.utils
 
 object Constants {
 

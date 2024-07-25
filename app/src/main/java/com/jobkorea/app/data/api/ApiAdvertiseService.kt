@@ -1,7 +1,7 @@
 package com.jobkorea.app.data.api
 
 import com.jobkorea.app.domain.models.ResponseSplashAdvertise
-import com.jobkorea.app.util.Constants
+import com.jobkorea.app.utils.Constants
 import retrofit2.http.GET
 
 interface ApiAdvertiseService {

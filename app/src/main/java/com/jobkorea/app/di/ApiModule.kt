@@ -1,7 +1,7 @@
 package com.jobkorea.app.di
 
 import com.jobkorea.app.data.api.ApiAdvertiseService
-import com.jobkorea.app.util.Constants
+import com.jobkorea.app.utils.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -48,6 +48,7 @@ class SplashActivity : ComponentActivity() {
             JkcomposeTheme {
                SplashScreen (onTimeOut = {
                    startActivity(Intent(this, MainActivity::class.java))
+                   finish()
                })
             }
         }
