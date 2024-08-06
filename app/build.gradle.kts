@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.devtools.ksp)
     alias(libs.plugins.ktlint)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -87,5 +88,10 @@ dependencies {
     ksp(libs.hilt.compiler)
 
 
+    // Navigation
+    implementation(libs.androidx.navigation.compose)
+
+    // Serialization
+    implementation(libs.kotlin.serialization.json)
 
 }

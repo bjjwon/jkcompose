@@ -15,8 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Jkcompose"
         tools:targetApi="31">
+
         <activity
-            android:name=".ui.screens.splash.SplashActivity"
+            android:name=".presentation.screens.splash.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.Jkcompose">
             <intent-filter>
@@ -26,10 +27,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.screens.main.MainActivity"
+            android:name=".presentation.screens.main.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.Jkcompose">
-        </activity>
+            android:theme="@style/Theme.Jkcompose"></activity>
     </application>
 
 </manifest>

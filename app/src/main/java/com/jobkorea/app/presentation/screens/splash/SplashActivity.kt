@@ -1,4 +1,4 @@
-package com.jobkorea.app.ui.screens.splash
+package com.jobkorea.app.presentation.screens.splash
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -28,8 +28,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.jobkorea.app.R
-import com.jobkorea.app.ui.screens.main.MainActivity
-import com.jobkorea.app.ui.theme.JkcomposeTheme
+import com.jobkorea.app.presentation.screens.main.MainActivity
+import com.jobkorea.app.presentation.theme.JkcomposeTheme
 import com.jobkorea.app.viewmodel.SplashUiState
 import com.jobkorea.app.viewmodel.SplashViewModel
 import dagger.hilt.android.AndroidEntryPoint

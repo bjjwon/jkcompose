@@ -1,5 +1,6 @@
 package com.jobkorea.app.data.api
 
+import com.jobkorea.app.domain.models.ResponseAppId
 import com.jobkorea.app.domain.models.ResponseSplashAdvertise
 import com.jobkorea.app.utils.Constants
 import retrofit2.http.GET
@@ -12,4 +13,6 @@ interface ApiAdvertiseService {
 
     @GET(Constants.JK_SPLASH_AOS_AD)
     suspend fun requestSplashAdvertise(): ResponseSplashAdvertise
+
+    suspend fun requestAppNoCreate() : ResponseAppId
 }

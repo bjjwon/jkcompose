@@ -1,4 +1,4 @@
-package com.jobkorea.app.ui.theme
+package com.jobkorea.app.presentation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

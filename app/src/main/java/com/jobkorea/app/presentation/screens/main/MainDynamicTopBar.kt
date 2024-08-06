@@ -30,27 +30,27 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.jobkorea.app.R
-import com.jobkorea.app.ui.screens.main.defaultPadding
-import com.jobkorea.app.ui.screens.main.maxHeightTopbar
-import com.jobkorea.app.ui.screens.main.minHeightTopBar
+import com.jobkorea.app.presentation.screens.main.MainUiConstant.DEFAULT_PADDING
+import com.jobkorea.app.presentation.screens.main.MainUiConstant.MAX_HEIGHT_TOPBAR
+import com.jobkorea.app.presentation.screens.main.MainUiConstant.MIN_HEIGHT_TOBAR
 
 @Composable
-fun DynamicTopBar(isTopbarCollapsed: Int) {
+fun MainDynamicTopBar(isTopbarCollapsed: Int) {
 
     var minWidthSearchInputBox by remember { mutableFloatStateOf(Float.MAX_VALUE) }
     var maxWidthSearchInputBox by remember { mutableFloatStateOf(Float.MAX_VALUE) }
 
     val dynamicTopbarHeight by animateFloatAsState(
-        targetValue = (maxHeightTopbar - isTopbarCollapsed * minHeightTopBar).coerceIn(
-            minHeightTopBar,
-            maxHeightTopbar
+        targetValue = (MAX_HEIGHT_TOPBAR - isTopbarCollapsed * MIN_HEIGHT_TOBAR).coerceIn(
+            MIN_HEIGHT_TOBAR,
+            MAX_HEIGHT_TOPBAR
         ).toFloat(),
         label = "상단바 가변 높이"
     )
     val dynamicTopPadding by animateFloatAsState(
-        targetValue = (minHeightTopBar - isTopbarCollapsed * minHeightTopBar).coerceIn(
-            defaultPadding / 2,
-            minHeightTopBar
+        targetValue = (MIN_HEIGHT_TOBAR - isTopbarCollapsed * MIN_HEIGHT_TOBAR).coerceIn(
+            DEFAULT_PADDING / 2,
+            MIN_HEIGHT_TOBAR
         ).toFloat(),
         label = "검색 박스 동적 위치"
     )
@@ -81,7 +81,7 @@ fun DynamicTopBar(isTopbarCollapsed: Int) {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(minHeightTopBar.dp)
+                    .height(MIN_HEIGHT_TOBAR.dp)
             ) {
                 Spacer(modifier = Modifier
                     .weight(1f)
@@ -121,9 +121,9 @@ fun SearchInputBox(dynamicTopPadding: Float, dynamicWidthPixels: Float) {
                     Dp(dynamicTopPadding),
                     label = "SearchInputBox Top Padding"
                 ).value,
-                start = defaultPadding.dp,
-                end = defaultPadding.dp,
-                bottom = defaultPadding.dp / 2
+                start = DEFAULT_PADDING.dp,
+                end = DEFAULT_PADDING.dp,
+                bottom = DEFAULT_PADDING.dp / 2
             )
             .width(animateDpAsState(dynamicWidth, label = "SearchInputBox Width").value),
         shape = RoundedCornerShape(8.dp),
