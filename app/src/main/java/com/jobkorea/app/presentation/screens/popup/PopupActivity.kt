@@ -1,4 +1,4 @@
-package com.jobkorea.app.presentation.screens.main
+package com.jobkorea.app.presentation.screens.popup
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,26 +9,31 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.google.gson.Gson
-import com.jobkorea.app.presentation.screens.popup.PopupActivity
+import com.jobkorea.app.data.ActivityParams
 import com.jobkorea.app.presentation.viewmodel.MainEvent
-import com.jobkorea.app.presentation.viewmodel.MainViewModel
-import dagger.hilt.android.AndroidEntryPoint
+import com.jobkorea.app.presentation.viewmodel.PopupViewModel
+import com.jobkorea.app.presentation.viewmodel.PopupViewModel.*
 import kotlinx.coroutines.launch
 
-@AndroidEntryPoint
-class MainActivity : ComponentActivity() {
+class PopupActivity : ComponentActivity() {
 
-    private val viewModel by viewModels<MainViewModel>()
+    private val viewModel by viewModels<PopupViewModel>()
+
+    companion object {
+        const val PARAMS = "params"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        val jsonParams = intent.getStringExtra(PARAMS)
+        val params = jsonParams?.let { Gson().fromJson(it, ActivityParams::class.java) }
+
         setContent {
-            MainScreen()
+            PopupScreen(screenParams = params)
         }
 
         setObservers()
-
     }
 
     private fun setObservers() {
@@ -37,11 +42,11 @@ class MainActivity : ComponentActivity() {
             lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.event.collect {
                     when (it) {
-                        is MainEvent.GoActivity -> Intent(
-                            this@MainActivity,
+                        is PopupEvent.GoActivity -> Intent(
+                            this@PopupActivity,
                             PopupActivity::class.java
                         ).apply {
-                            putExtra(PopupActivity.PARAMS, Gson().toJson(it.params))
+                            putExtra(PARAMS, Gson().toJson(it.params))
                         }.also { intent ->
                             startActivity(intent)
                         }
@@ -51,8 +56,3 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
-
-
-
-

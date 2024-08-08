@@ -1,7 +1,7 @@
 package com.jobkorea.app.presentation.web
 
 import android.net.Uri
-import com.jobkorea.app.data.ScreenParams
+import com.jobkorea.app.data.ActivityParams
 import com.jobkorea.app.utils.Constants
 import java.util.Locale
 
@@ -37,7 +37,7 @@ open class ToAppHelper {
      * @param url 주소
      * @return 완성된 주소를 넘긴다.
      */
-    private fun addHTTP(url: String): String {
+    fun addHTTP(url: String): String {
         var url = url
         val lowerurl = url.lowercase(Locale.ROOT)
 
@@ -50,7 +50,7 @@ open class ToAppHelper {
     }
 
 
-    protected fun goSub(onNavigate: (ScreenParams) -> Unit) {
+    protected fun goSub(onNavigate: (ActivityParams) -> Unit) {
 
         var uri = lowerUri
 
@@ -77,7 +77,7 @@ open class ToAppHelper {
 
 
         onNavigate(
-            ScreenParams(uiType, urlType, goUrl, title, searchKeyword, searchUrl)
+            ActivityParams(uiType, urlType, goUrl, title, searchKeyword, searchUrl)
         )
 
     }

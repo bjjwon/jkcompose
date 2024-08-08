@@ -1,11 +1,10 @@
-package com.jobkorea.app.viewmodel
+package com.jobkorea.app.presentation.viewmodel
 
 import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.jobkorea.app.data.local.LocalHelper
 import com.jobkorea.app.domain.models.ResponseSplashAdvertise
-import com.jobkorea.app.domain.repository.SplashRepositoryImpl
+import com.jobkorea.app.data.repository.SplashRepositoryImpl
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -17,15 +16,11 @@ import javax.inject.Inject
 @HiltViewModel
 class SplashViewModel @Inject constructor(
     private val repository: SplashRepositoryImpl,
-    private val localHelper: LocalHelper
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow<SplashUiState?>(null)
     val uiState: StateFlow<SplashUiState?> = _uiState
 
-    init {
-        
-    }
 
     /***
      * 딥링크 여부 확인
@@ -40,12 +35,7 @@ class SplashViewModel @Inject constructor(
          //   _uiState.value = SplashUiState.ShowAdvertise(response)
             _uiState.value = SplashUiState.ShowDefaultSplash
         }
-
-
     }
-
-
-
 
 }
 

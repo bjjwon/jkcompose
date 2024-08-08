@@ -2,11 +2,11 @@ package com.jobkorea.app.presentation.web
 
 import android.content.Context
 import android.webkit.JavascriptInterface
-import com.jobkorea.app.data.ScreenParams
+import com.jobkorea.app.data.ActivityParams
 
 class AndroidWebBridge(
     context : Context,
-    private val onNavigate : (ScreenParams) -> Unit = {}
+    private val onNavigate : (ActivityParams) -> Unit = {}
 ) {
 
     /**

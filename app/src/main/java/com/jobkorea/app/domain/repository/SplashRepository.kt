@@ -9,6 +9,4 @@ abstract class SplashRepository {
 
     abstract suspend fun requestAppNoCreate() : ResponseAppId
 
-
-
 }

@@ -30,8 +30,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.jobkorea.app.R
 import com.jobkorea.app.presentation.screens.main.MainActivity
 import com.jobkorea.app.presentation.theme.JkcomposeTheme
-import com.jobkorea.app.viewmodel.SplashUiState
-import com.jobkorea.app.viewmodel.SplashViewModel
+import com.jobkorea.app.presentation.viewmodel.SplashUiState
+import com.jobkorea.app.presentation.viewmodel.SplashViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 

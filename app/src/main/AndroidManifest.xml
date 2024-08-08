@@ -26,10 +26,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".presentation.screens.main.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.Jkcompose"></activity>
+            android:theme="@style/Theme.Jkcompose">
+        </activity>
+
+        <activity
+            android:name=".presentation.screens.popup.PopupActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Jkcompose">
+        </activity>
+
+
     </application>
 
 </manifest>

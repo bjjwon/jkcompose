@@ -1,8 +1,9 @@
-package com.jobkorea.app.domain.repository
+package com.jobkorea.app.data.repository
 
 import com.jobkorea.app.data.api.ApiAdvertiseService
 import com.jobkorea.app.domain.models.ResponseAppId
 import com.jobkorea.app.domain.models.ResponseSplashAdvertise
+import com.jobkorea.app.domain.repository.SplashRepository
 import com.jobkorea.app.services.DispatcherProvider
 import kotlinx.coroutines.withContext
 import javax.inject.Inject

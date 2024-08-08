@@ -1,11 +1,11 @@
 package com.jobkorea.app.presentation.web
 
 import android.util.Log
-import com.jobkorea.app.data.ScreenParams
+import com.jobkorea.app.data.ActivityParams
 
 object ToappManager : ToAppHelper() {
 
-    fun toApp(command : String, onNavigate : (ScreenParams) -> Unit) {
+    fun toApp(command : String, onNavigate : (ActivityParams) -> Unit = {}) : Boolean {
 
         super.originalUrl = command
 
@@ -18,6 +18,9 @@ object ToappManager : ToAppHelper() {
             when(lowerUri.host) {
                 "gosub" -> goSub(onNavigate)
             }
+            return true
+        } else {
+            return false
         }
     }
 
